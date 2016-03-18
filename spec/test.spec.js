@@ -66,6 +66,13 @@ describe('Babysitter cannot work fractional hours', function(){
   it('if babysitter works from 11:30PM to 4:20AM, babysitter makes 64$', function() {
     expect(calculatePay('11:30PM', '4:20AM')).toBe('$64.00');
 	});
+});
+
+describe('Babysitter must start at 5PM or later and leave by 4AM or earlier', function(){
+  it('if babysitter start at 3PM, only gets paid starting at 5PM and gets error; 3PM to 10PM is 4*12 + 8 = 56$', function() {
+    expect(calculatePay('3:00PM', '10:00PM')).toBe('$56.00');
+	});
+
 
 });
 

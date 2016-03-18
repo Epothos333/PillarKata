@@ -6,8 +6,9 @@ function calculatePay(startTime, endTime){
 	// var endFrac = fractionHour(endTime);
 	var start = convertTime(startTime, true);
 	var end = convertTime(endTime);
-	
-
+	if (start< 5) {
+		start = 5;
+	}
 
 	while(end !== start) {
 		if (end > 12) {
