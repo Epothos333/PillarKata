@@ -30,5 +30,13 @@ describe('Babysitter makes $16/hr from midnight to 4AM', function(){
   it('if babysitter works from 12AM to 1AM, babysitter makes 16$', function() {
     expect(calculatePay('12:00AM', '1:00AM')).toBe('$16.00');
 	});
+    it('if babysitter works from 12AM to 4AM, babysitter makes 16$', function() {
+    expect(calculatePay('12:00AM', '4:00AM')).toBe('$64.00');
+	});
+});
 
+describe('Babysitter gets paid differently hourly wage as time goes on', function(){
+  it('if babysitter works from 8PM to 10PM, babysitter makes 12+8 = 20$', function() {
+    expect(calculatePay('8:00AM', '10:00PM')).toBe('$20.00');
+	});
 });
