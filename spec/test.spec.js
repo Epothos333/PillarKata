@@ -51,5 +51,15 @@ describe('Babysitter gets paid differently hourly wage as time goes on', functio
   it('if babysitter works from 8PM to 1AM, babysitter makes 12+8+8+8+16 = 52$', function() {
     expect(calculatePay('1:00AM', '2:00AM')).toBe('$16.00');
 	});
-
 });
+
+describe('Babysitter cannot work fractional hours', function(){
+  it('if babysitter works from 8:30PM to 10:40PM, babysitter makes 12+8 = 20$', function() {
+    expect(calculatePay('8:30PM', '10:40PM')).toBe('$20.00');
+	});
+  it('if babysitter works from 8:30PM to 10:20PM, babysitter makes 12+8 = 20$', function() {
+    expect(calculatePay('8:30PM', '10:20PM')).toBe('$12.00');
+	});
+});
+
+
