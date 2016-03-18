@@ -4,9 +4,12 @@ function calculatePay(startTime, endTime){
 	var j = 0;
 	var start = convertTime(startTime);
 	var end = convertTime(endTime);
-	if (/[A]/.test(endTime) && end !== 12) {
-		end +=12;
-	}
+	// if (/[A]/.test(endTime) && end !== 12) {
+	// 	end +=12;
+	// }
+	// if (/[A]/.test(startTime) && start !== 12) {
+	// 	start +=12;
+	// }
 	console.log(start);
 	console.log(end);
 
@@ -23,17 +26,6 @@ function calculatePay(startTime, endTime){
 		end -= 1;
 	}
 
-	// if (start >= 12) {
-	// 	pay = (end - start) * 16;
-	// }
-	// else if (start >= 9) {
-	// 	pay = (end -start) * 8;
-	// } 
-	// else {
-	// 	pay = (end - start)*12;
-	// }
-
-
   return '$' + pay + '.00';
 
   function convertTime(time) {
@@ -42,7 +34,11 @@ function calculatePay(startTime, endTime){
   	while(time[x] !== ':') {
   		convertedTime += time[x];
   		x++
+  	};
+  	numTime = Number(convertedTime);
+  	if (/[A]/.test(time) && numTime !== 12) {
+  		numTime += 12
   	}
-  	return Number(convertedTime);
+  	return numTime;
   }
 }
