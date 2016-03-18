@@ -20,6 +20,15 @@ describe('Babysitter recieves 12$/hr between start time and bedtime', function()
 describe('Babysitter makes only $8/hr from bedtime (9PM) to midnight', function(){
   it('if babysitter works from 9PM to 10PM, babysitter makes 8$', function() {
     expect(calculatePay('9:00PM', '10:00PM')).toBe('$8.00');
+	});
+   it('if babysitter works from 9PM to 12AM, babysitter makes 8$', function() {
+    expect(calculatePay('9:00PM', '12:00AM')).toBe('$24.00');
+	});
 });
+
+describe('Babysitter makes $16/hr from midnight to 4AM', function(){
+  it('if babysitter works from 12AM to 1AM, babysitter makes 16$', function() {
+    expect(calculatePay('12:00AM', '1:00AM')).toBe('$16.00');
+	});
 
 });
