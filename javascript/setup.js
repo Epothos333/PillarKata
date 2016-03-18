@@ -2,16 +2,16 @@ function calculatePay(startTime, endTime){
 	var pay = 0;
 	var i = 0;
 	var j = 0;
+	var startFrac = fractionHour(startTime);
+	var endFrac = fractionHour(endTime);
 	var start = convertTime(startTime);
 	var end = convertTime(endTime);
-	// if (/[A]/.test(endTime) && end !== 12) {
-	// 	end +=12;
-	// }
-	// if (/[A]/.test(startTime) && start !== 12) {
-	// 	start +=12;
-	// }
-	console.log(start);
-	console.log(end);
+
+	console.log(startFrac);
+	console.log(endFrac);
+
+
+
 
 	while(end !== start) {
 		if (end > 12) {
@@ -28,12 +28,20 @@ function calculatePay(startTime, endTime){
 
   return '$' + pay + '.00';
 
+  function fractionHour(time) {
+  	var fraction = [];
+  	fraction.push(time[time.indexOf(':')+1]);
+  	fraction.push(time[time.indexOf(':')+2]);
+  	fraction = fraction.join("");
+  	return fraction;
+  }
+
   function convertTime(time) {
-  	var x = 0;
+  	var index = 0;
   	var convertedTime = '';
-  	while(time[x] !== ':') {
-  		convertedTime += time[x];
-  		x++
+  	while(time[index] !== ':') {
+  		convertedTime += time[index];
+  		index++
   	};
   	numTime = Number(convertedTime);
   	if (/[A]/.test(time) && numTime !== 12) {
