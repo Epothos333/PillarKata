@@ -1,3 +1,3 @@
-function compliment(){
-  return "You look nice today"
+function calculatePay(){
+  return true;
 }

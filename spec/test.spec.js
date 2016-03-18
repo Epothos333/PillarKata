@@ -1,10 +1,7 @@
-describe('Setting up tests with Jasmine', function(){
+describe('Babysitting Kata', function(){
   it('should be true', function() {
-    expect(true).toBe(true);
+    expect(calculatePay(true)).toBe(true);
   });
 
-  it('shold see the source file', function() {
-    expect(compliment()).toBe('You look nice today');
-  });
 });
 
