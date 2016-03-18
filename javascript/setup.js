@@ -8,15 +8,13 @@ function calculatePay(startTime, endTime){
 		start = 5;
 	} 
 	if (end > 16) {
-		end = 16
+		end = 16;
 	}
-
-
 	while(end !== start) {
 		if (end > 12) {
 			pay += 16;
 		}
-		else if (end <=12 && end >9 ) {
+		else if (end > 9) {
 			pay += 8;
 		}
 		else {
@@ -42,7 +40,7 @@ function calculatePay(startTime, endTime){
   	if ((time[fracIndex+1] !== '0' || time[fracIndex+2] !=='0') && start) {
   		numTime += 1
   	}
-  	console.log(numTime);
   	return numTime;
   }
+  
 }
