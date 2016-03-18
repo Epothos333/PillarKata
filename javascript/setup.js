@@ -6,12 +6,10 @@ function calculatePay(startTime, endTime){
 	var endFrac = fractionHour(endTime);
 	var start = convertTime(startTime);
 	var end = convertTime(endTime);
-
-	console.log(startFrac);
-	console.log(endFrac);
-
-
-
+	
+	if(endFrac < startFrac) {
+		end -= 1
+	}
 
 	while(end !== start) {
 		if (end > 12) {
