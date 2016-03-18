@@ -17,11 +17,14 @@ function calculatePay(startTime, endTime){
 	console.log(start);
 	console.log(end);
 
-	if (start >= 9) {
+	if (start >= 12) {
+		pay = (end - (start-12)) * 16;
+	}
+	else if (start >= 9) {
 		pay = (end -start) * 8;
 	} 
 	else {
-		pay = (end - start)*12
+		pay = (end - start)*12;
 	}
 
 
