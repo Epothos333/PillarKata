@@ -17,7 +17,13 @@ function calculatePay(startTime, endTime){
 	console.log(start);
 	console.log(end);
 
-	pay = (end - start)*12
+	if (start >= 9) {
+		pay = (end -start) * 8;
+	} 
+	else {
+		pay = (end - start)*12
+	}
+
 
   return '$' + pay + '.00';
 }
