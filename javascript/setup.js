@@ -4,12 +4,13 @@ function calculatePay(startTime, endTime){
 	var j = 0;
 	var start = convertTime(startTime, true);
 	var end = convertTime(endTime);
-	if (start< 5) {
+	if (start< 5 || start > end) {
 		start = 5;
-	}
+	} 
 	if (end > 16) {
 		end = 16
 	}
+
 
 	while(end !== start) {
 		if (end > 12) {

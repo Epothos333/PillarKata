@@ -75,8 +75,11 @@ describe('Babysitter must start at 5PM or later and leave by 4AM or earlier', fu
   it('if babysitter leave at 6M, only gets paid up to 4AM; 8PM to 6AM is 12+3*8+4*64 = 100$', function() {
     expect(calculatePay('8:00PM', '6:00AM')).toBe('$100.00');
 	});
-  it('if babysitter works from 1AM to 12AM she recieves 136$', function() {
-    expect(calculatePay('1:00AM', '12:00AM')).toBe('$136.00');
+  it('if babysitter works from 12AM to 11PM she recieves 64$', function() {
+    expect(calculatePay('12:00AM', '11:00PM')).toBe('$64.00');
+	});
+  it('if babysitter works from 1AM to 12AM she recieves 72$', function() {
+    expect(calculatePay('1:00AM', '12:00AM')).toBe('$72.00');
 	});
 
 
