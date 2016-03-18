@@ -39,4 +39,17 @@ describe('Babysitter gets paid differently hourly wage as time goes on', functio
   it('if babysitter works from 8PM to 10PM, babysitter makes 12+8 = 20$', function() {
     expect(calculatePay('8:00PM', '10:00PM')).toBe('$20.00');
 	});
+  it('if babysitter works from 8PM to 12AM, babysitter makes 12+8+8+8 = 36$', function() {
+    expect(calculatePay('8:00PM', '12:00AM')).toBe('$36.00');
+	});
+  it('if babysitter works from 8PM to 1AM, babysitter makes 12+8+8+8+16 = 52$', function() {
+    expect(calculatePay('8:00PM', '1:00AM')).toBe('$52.00');
+	});
+  it('if babysitter works from 8PM to 1AM, babysitter makes 12+8+8+8+16 = 52$', function() {
+    expect(calculatePay('9:00PM', '1:00AM')).toBe('$40.00');
+	});
+  it('if babysitter works from 8PM to 1AM, babysitter makes 12+8+8+8+16 = 52$', function() {
+    expect(calculatePay('1:00AM', '2:00AM')).toBe('$16.00');
+	});
+
 });
