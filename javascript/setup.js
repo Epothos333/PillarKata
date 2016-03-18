@@ -4,7 +4,7 @@ function calculatePay(startTime, endTime){
 	var j = 0;
 	// var startFrac = fractionHour(startTime);
 	// var endFrac = fractionHour(endTime);
-	var start = convertTime(startTime);
+	var start = convertTime(startTime, true);
 	var end = convertTime(endTime);
 	
 
@@ -32,7 +32,7 @@ function calculatePay(startTime, endTime){
   // 	return fraction;
   // }
 
-  function convertTime(time) {
+  function convertTime(time, start) {
   	var index = 0;
   	var convertedTime = '';
   	while(time[index] !== ':') {
@@ -44,7 +44,7 @@ function calculatePay(startTime, endTime){
   		numTime += 12
   	}
   	var fracIndex = time.indexOf(':');
-  	if (time[fracIndex+1] !== '0' || time[fracIndex+2] !=='0') {
+  	if ((time[fracIndex+1] !== '0' || time[fracIndex+2] !=='0') && start) {
   		numTime += 1
   	}
   	console.log(numTime);
