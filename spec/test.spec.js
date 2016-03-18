@@ -72,6 +72,9 @@ describe('Babysitter must start at 5PM or later and leave by 4AM or earlier', fu
   it('if babysitter start at 3PM, only gets paid starting at 5PM and gets error; 3PM to 10PM is 4*12 + 8 = 56$', function() {
     expect(calculatePay('3:00PM', '10:00PM')).toBe('$56.00');
 	});
+  it('if babysitter leave at 6M, only gets paid up to 4AM; 8PM to 6AM is 12+3*8+4*64 = 100$', function() {
+    expect(calculatePay('8:00PM', '6:00AM')).toBe('$100.00');
+	});
 
 
 });
