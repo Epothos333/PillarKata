@@ -1,3 +1,3 @@
 function calculatePay(){
-  return true;
+  return '$12.00';
 }
