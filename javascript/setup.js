@@ -1,7 +1,5 @@
 function calculatePay(startTime, endTime){
 	var pay = 0;
-	var i = 0;
-	var j = 0;
 	var start = convertTime(startTime, true);
 	var end = convertTime(endTime);
 	if (start< 5 || start > end) {
