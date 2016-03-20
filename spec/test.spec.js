@@ -21,7 +21,7 @@ describe('Babysitter makes only $8/hr from bedtime (9PM) to midnight', function(
   it('if babysitter works from 9PM to 10PM, babysitter makes 8$', function() {
     expect(calculatePay('9:00PM', '10:00PM')).toBe('$8.00');
 	});
-   it('if babysitter works from 9PM to 12AM, babysitter makes 8$', function() {
+   it('if babysitter works from 9PM to 12AM, babysitter makes 24$', function() {
     expect(calculatePay('9:00PM', '12:00AM')).toBe('$24.00');
 	});
 });
@@ -30,7 +30,7 @@ describe('Babysitter makes $16/hr from midnight to 4AM', function(){
   it('if babysitter works from 12AM to 1AM, babysitter makes 16$', function() {
     expect(calculatePay('12:00AM', '1:00AM')).toBe('$16.00');
 	});
-    it('if babysitter works from 12AM to 4AM, babysitter makes 16$', function() {
+    it('if babysitter works from 12AM to 4AM, babysitter makes 64$', function() {
     expect(calculatePay('12:00AM', '4:00AM')).toBe('$64.00');
 	});
 });
@@ -45,10 +45,10 @@ describe('Babysitter gets paid differently hourly wage as time goes on', functio
   it('if babysitter works from 8PM to 1AM, babysitter makes 12+8+8+8+16 = 52$', function() {
     expect(calculatePay('8:00PM', '1:00AM')).toBe('$52.00');
 	});
-  it('if babysitter works from 8PM to 1AM, babysitter makes 12+8+8+8+16 = 52$', function() {
+  it('if babysitter works from 9PM to 1AM, babysitter makes 8+8+8+16 = 40$', function() {
     expect(calculatePay('9:00PM', '1:00AM')).toBe('$40.00');
 	});
-  it('if babysitter works from 8PM to 1AM, babysitter makes 12+8+8+8+16 = 52$', function() {
+  it('if babysitter works from 1AM to 2AM, babysitter makes 12+8+8+8+16 = 16$', function() {
     expect(calculatePay('1:00AM', '2:00AM')).toBe('$16.00');
 	});
 });
@@ -81,7 +81,9 @@ describe('Babysitter must start at 5PM or later and leave by 4AM or earlier', fu
   it('if babysitter works from 1AM to 12AM she recieves 72$', function() {
     expect(calculatePay('1:00AM', '12:00AM')).toBe('$72.00');
 	});
-
+  it('if babysitter works from 5PM to 4AM she recieves 136$', function() {
+    expect(calculatePay('5:00PM', '4:00AM')).toBe('$136.00');
+  });
 
 });
 
